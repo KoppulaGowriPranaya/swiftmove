@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f8fafc;
+}
+.navbar{
+            height:65px;
+            background:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:0 40px;
+             position:sticky;
+             top:0;
+            z-index:1000;
+            border-bottom:1px solid #e4e4e4;
+        }
+        .logo{
+    display:flex;
+    align-items:center;
+    gap:1px;
+}
+
+.logo img{
+    width:150px;
+    height:50px;
+    margin-left:20px;
+}
+
+.logo h3{
+    margin-left:  -110px;
+    font-size:32px;
+    font-weight:700; /* not 800px */
+    color:#111827;
+}
+        .nav-links{
+            display:flex;
+            list-style:none;
+            gap:35px;
+            margin:0;
+}
+        .nav-list a{
+            text-decoration:none;
+            color:#4b5563;
+            font-family:sans-serif;
+            font-size: 14px;
+        }
+        .free-quote{
+            background:#ff7b22;
+            color:white;
+            margin-right: 20px;;
+            border:none;
+            padding:10px 20px;
+            border-radius:10px;
+            cursor:pointer;
+        }
+        .moon-icon{
+           margin-right:0;
+        }
+        .nav-right{
+            display:flex;
+            align-items:center;
+            gap:20px;
+        }
+
+/* HERO */
+
+.service-hero{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.service-hero h1{
+    font-size:60px;
+    font-weight:600px;
+    margin-bottom:20px;
+}
+
+.service-hero p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+.pricing{
+    padding:100px 40px;
+    background:#f8fafc;
+}
+
+.pricing-header{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.pricing-badge{
+    display:inline-block;
+    padding:10px 22px;
+    background:#dbeafe;
+    color:#2563eb;
+    border-radius:50px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.pricing-header h2{
+    font-size:40px;
+    font-weight:800;
+    color:#0f172a;
+    margin-bottom:10px;
+}
+
+.pricing-header p{
+    color:#64748b;
+    font-size:17px;
+}
+
+.pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+}
+
+.price-card{
+    background:#fff;
+    border-radius:24px;
+    padding:40px;
+    border:1px solid #e5e7eb;
+    position:relative;
+}
+
+.price-card h3{
+    text-align:center;
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    display:block;
+    text-align:center;
+    color:#64748b;
+    margin-bottom:35px;
+}
+
+.price{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.price small{
+    color:#64748b;
+    font-size:18px;
+}
+
+.price h1{
+    font-size:35px;
+    color:#0f172a;
+}
+
+.price-card ul{
+    list-style:none;
+    margin-bottom:35px;
+}
+
+.price-card ul li{
+    padding:7px 0;
+    font-size:16px;
+    color:#0f172a;
+}
+
+.disabled{
+    color:#94a3b8 !important;
+}
+
+.price-card button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:#e5e7eb;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.popular{
+    border:3px solid #2563eb;
+}
+
+.popular-tag{
+    position:absolute;
+    top:-18px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#2563eb;
+    color:white;
+    padding:8px 24px;
+    border-radius:30px;
+    font-weight:600;
+}
+
+.active-btn{
+    background:#2563eb !important;
+    color:white;
+}
+.pricing-note{
+    text-align:center;
+    margin-top:50px;
+    padding-top:5px;
+}
+
+.pricing-note p{
+    color:#64748b;
+    font-size:18px;
+}
+.faq-section{
+    width: 65%;
+    margin: 120px auto;
+}
+.faq-badge{
+    display:block;
+    width:fit-content;
+    margin:0 auto 20px;
+    padding:10px 20px;
+    background:#dbeafe;
+    color:#2563eb;
+    border-radius:30px;
+    font-weight:600;
+}
+.faq-section h1{
+    text-align:center;
+    font-size:60px;
+    font-weight:700;
+    margin-bottom:20px;
+    color:#0f172a;
+}
+
+.faq-section p{
+    text-align:center;
+    color:#64748b;
+    font-size:20px;
+    margin-bottom:80px;
+}
+
+.accordion{
+    margin-top:40px;
+}
+
+.accordion-item{
+    border:none;
+    border-bottom:1px solid #e5e7eb;
+    background:transparent;
+}
+
+.accordion-button{
+    background:transparent;
+    box-shadow:none;
+    padding:35px 0;
+    font-size:18px;
+    font-weight:700;
+    color:#0f172a;
+}
+
+.accordion-button:not(.collapsed){
+    background:transparent;
+    color:#0f172a;
+}
+
+.accordion-button:focus{
+    box-shadow:none;
+}
+
+.accordion-body{
+    padding:0 0 25px 0;
+    font-size:16px;
+    line-height:1.8;
+    color:#64748b;
+}
+
+/* Plus Button */
+
+.accordion-button::after{
+    background-image:none;
+    content:"+";
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:#f3f4f6;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    color:#6b7280;
+    transform:none !important;
+    margin-left:auto;
+}
+
+.accordion-button:not(.collapsed)::after{
+    content:"×";
+    transform:none !important;
+}
+.accordion-body{
+    color: #666;
+    padding-left: 0;
+}
+.cta{
+    background:linear-gradient(135deg,#2563eb,#1e40af);
+    text-align:center;
+    padding:100px 20px;
+    color:white;
+}
+
+.cta h2{
+    font-size:40px;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.cta p{
+    max-width:700px;
+    margin:0 auto 40px;
+    font-size:20px;
+    line-height:1.8;
+    color:#dbeafe;
+}
+
+.cta-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.quote-btn{
+    width:auto;
+    padding:18px 40px;
+    background:#ff7a1a;
+    color:white;
+    border:none;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:600;
+}
+
+.call-btn{
+    width:auto;
+    padding:18px 40px;
+    background:transparent;
+    color:white;
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:12px;
+    font-size:18px;
+}
+
+.footer{
+    background:#020d28;
+    padding:90px 80px 40px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:80px;
+}
+
+.footer-logo img{
+    width:160px;
+    margin-bottom:10px;
+}
+
+.footer-desc{
+    color:#94a3b8;
+    line-height:1.4;
+    margin-bottom:30px;
+    max-width:350px;
+}
+
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    color:#94a3b8;
+    margin-bottom:10px;
+}
+
+.footer-col h4{
+    color:#fff;
+    margin-bottom:13px;
+    font-size:15px;
+}
+
+.footer-col a{
+    display:block;
+    color:#94a3b8;
+    text-decoration:none;
+    margin-bottom:0.5px;
+}
+
+.footer-col a:hover{
+    color:#fff;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    width:30px;
+    height:30px;
+    border-radius:12px;
+    background:#1e293b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+}
+
+.footer-bottom{
+    margin-top:10px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer-bottom p{
+    color:#94a3b8;
+}
+
+.footer-links{
+    display:flex;
+    gap:30px;
+}
+
+.footer-links a{
+    color:#94a3b8;
+    text-decoration:none;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+.breadcrumb a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+.breadcrumb{
+    margin-left:650px;
+}
+.hamburger-icon{
+    display:none;
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        position:relative;
+    }
+
+    .hamburger-icon{
+        display:block;
+        font-size:30px;
+        cursor:pointer;
+        margin-right:20px;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:65px;
+        right:0;
+        width:250px;
+        background:white;
+        flex-direction:column;
+        padding:15px 0;
+        list-style:none;
+        box-shadow:0 5px 15px rgba(0,0,0,.1);
+    }
+
+    .nav-links li{
+        padding:10px 20px;
+    }
+
+    .nav-links li a{
+        text-decoration:none;
+        color:#111827;
+    }
+
+    .hamburger-icon:hover + .nav-links{
+        display:flex;
+    }
+
+    .nav-links:hover{
+        display:flex;
+    }
+
+    .nav-right{
+        display:none;
+    }
+}
+/* ======================
+   TABLET
+====================== */
+@media (max-width: 1024px){
+
+    .pricing-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .faq-section{
+        width:90%;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+    }
+
+    .breadcrumb{
+        margin-left:0;
+        text-align:center;
+    }
+}
+
+/* ======================
+   MOBILE
+====================== */
+@media (max-width:768px){
+
+    .navbar{
+        padding:0 15px;
+    }
+
+    .logo img{
+        width:120px;
+        height:40px;
+        margin-left:0;
+    }
+
+    .logo h3{
+        margin-left:-85px;
+        font-size:24px;
+    }
+
+    .service-hero{
+        padding:70px 20px;
+    }
+
+    .service-hero h1{
+        font-size:40px;
+    }
+
+    .service-hero p{
+        font-size:16px;
+    }
+
+    .pricing{
+        padding:60px 20px;
+    }
+
+    .pricing-header h2{
+        font-size:30px;
+    }
+
+    .pricing-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .price-card{
+        padding:25px;
+    }
+
+    .faq-section{
+        width:95%;
+        margin:70px auto;
+    }
+
+    .faq-section h1{
+        font-size:35px;
+    }
+
+    .faq-section p{
+        font-size:16px;
+        margin-bottom:40px;
+    }
+
+    .accordion-button{
+        font-size:16px;
+        padding:20px 0;
+    }
+
+    .cta{
+        padding:70px 20px;
+    }
+
+    .cta h2{
+        font-size:30px;
+    }
+
+    .cta p{
+        font-size:16px;
+    }
+
+    .cta-buttons{
+        flex-direction:column;
+    }
+
+    .quote-btn,
+    .call-btn{
+        width:100%;
+    }
+
+    .footer{
+        padding:50px 20px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+
+    .breadcrumb{
+        margin-left:0;
+        text-align:center;
+    }
+}
+
+/* ======================
+   iPhone SE
+====================== */
+@media (max-width:375px){
+
+    .logo img{
+        width:100px;
+        height:35px;
+    }
+
+    .logo h3{
+        font-size:20px;
+        margin-left:-70px;
+    }
+
+    .service-hero h1{
+        font-size:32px;
+    }
+
+    .pricing-header h2{
+        font-size:26px;
+    }
+
+    .faq-section h1{
+        font-size:28px;
+    }
+
+    .cta h2{
+        font-size:26px;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+            <div class="logo">
+                <img src="https://swiftmove-colorlib.pages.dev/assets/img/logo-light.svg" alt="SwiftMove">
+                
+                <h3>swiftmove</h3>
+            </div>
+            <div class="hamburger-icon">
+    ☰
+</div>
+            <ul class="nav-links">
+                <li class="nav-list"><a href="about.html">About</a></li>
+                <li class="nav-list"><a href="services.html">Services</a></li>
+                <li class="nav-list"><a href="index.html#how-it-works">How it Works</a></li>
+                <li class="nav-list"><a href="index.html#areas">Areas</a></li>
+                <li class="nav-list"><a href="pricing.html">Pricing</a></li>
+                <li class="nav-list"><a href="index.html#testimonials">Testimonials</a></li>
+                <li class="nav-list"><a href="index.html#quote">Quote</a></li>
+                <li class="nav-list"><a href="blog.html">Blog</a></li>
+                <li class="nav-list"><a href="contactus.html">contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="moon-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
+                </div>
+                <div class="right">
+                    <button class="free-quote">Free Quote</button>
+                </div>
+            </div>
+        </nav>
+    <section class="service-hero">
+    <h1>Pricing</h1>
+
+    <p>
+        Professional moving services designed to make your relocation
+        smooth, safe, and stress-free.
+    </p>
+
+    <div class="breadcrumb">
+    <a href="html.html">Home</a> / pricing
+</div>
+</section>
+<section class="pricing">
+    <div class="pricing-header">
+        <span class="pricing-badge">Pricing</span>
+        <h2>Transparent, Honest Pricing</h2>
+        <p>
+            No hidden fees, no surprises. Get a clear estimate before your move day.
+        </p>
+    </div>
+    <div class="pricing-grid">
+        <!-- Card 1 -->
+        <div class="price-card">
+            <h3>Studio / 1BR</h3>
+            <span class="subtitle">Small apartments and studios</span>
+            <div class="price">
+                <small>from</small>
+                <h1>$299</h1>
+            </div>
+            <ul>
+                <li>✓ 2-3 professional movers</li>
+                <li>✓ Small moving truck</li>
+                <li>✓ 3-5 hours estimated</li>
+                <li>✓ Blankets & basic protection</li>
+                <li class="disabled">✕ Packing services</li>
+                <li class="disabled">✕ Storage available</li>
+            </ul>
+            <button>Get Exact Quote</button>
+        </div>
+        <!-- Popular Card -->
+        <div class="price-card popular">
+            <div class="popular-tag">Most Popular</div>
+            <h3>2-3 Bedrooms</h3>
+            <span class="subtitle">Houses and large apartments</span>
+            <div class="price">
+                <small>from</small>
+                <h1>$599</h1>
+            </div>
+            <ul>
+                <li>✓ 3-4 professional movers</li>
+                <li>✓ Large moving truck</li>
+                <li>✓ 5-8 hours estimated</li>
+                <li>✓ Full padding & wrapping</li>
+                <li>✓ Disassembly & reassembly</li>
+                <li>✓ Packing services add-on</li>
+            </ul>
+            <button class="active-btn">Get Exact Quote</button>
+        </div>
+        <!-- Card 3 -->
+        <div class="price-card">
+            <h3>4+ Bedrooms</h3>
+            <span class="subtitle">Large homes and estates</span>
+            <div class="price">
+                <small>from</small>
+                <h1>$999</h1>
+            </div>
+            <ul>
+                <li>✓ 4-5 professional movers</li>
+                <li>✓ 2 moving trucks</li>
+                <li>✓ Full day service</li>
+                <li>✓ Premium protection</li>
+                <li>✓ Packing & unpacking</li>
+                <li>✓ Storage available</li>
+            </ul>
+            <button>Get Exact Quote</button>
+        </div>
+    </div>
+    <div class="pricing-note">
+    <p>
+        Final price based on distance, items, and additional services.
+        All quotes are free and no-obligation.
+    </p>
+</div>
+</section>
+<section class="faq-section">
+
+    <span class="faq-badge">FAQ</span>
+
+    <h1>Frequently Asked Questions</h1>
+
+    <p>
+        Find answers to common questions about our moving services and process.
+    </p>
+
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+        Are my belongings insured during the move?
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item’s accordion body.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+        How far in advance should i book?
+      </button>
+    </h2>
+    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item’s accordion body. Let’s imagine this being filled with some actual content.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+        Do you provide packing services?
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item’s accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+        can you move speciality items like pianos?
+      </button>
+    </h2>
+    <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the fourth item’s accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+        Do you offer storage solutions?
+      </button>
+    </h2>
+    <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item’s accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+    </div>
+  </div>
+</div>
+
+</section>
+<section class="cta">
+    <h2>Ready to Make Your Move?</h2>
+
+    <p>
+        Join 25,000+ families who trusted SwiftMove for a stress-free
+        relocation. Get your free quote today or call us now.
+    </p>
+
+    <div class="cta-buttons">
+        <button class="quote-btn">Get Free Quote →</button>
+        <button class="call-btn">📞 Call Now</button>
+    </div>
+</section>
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="https://swiftmove-colorlib.pages.dev/assets/img/logo-light.svg" alt="SwiftMove">
+            </div>
+
+            <p class="footer-desc">
+                Professional moving services that make your relocation stress-free.
+                Licensed, insured, and trusted by thousands.
+            </p>
+
+            <div class="contact-info">
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M760-480q0-117-81.5-198.5T480-760v-80q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480h-80Zm-160 0q0-50-35-85t-85-35v-80q83 0 141.5 58.5T680-480h-80Zm198 360q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg> (555) 890-1234</div>
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg> info@swiftmove.com</div>
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></svg> 100 Moving Way, Chicago, IL 60601</div>
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+            <h4>SERVICES</h4>
+            <a href="#">Local Moving</a>
+            <a href="#">Long Distance</a>
+            <a href="#">Commercial Moving</a>
+            <a href="#">Packing Services</a>
+            <a href="#">Storage Solutions</a>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+            <h4>COMPANY</h4>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+            <a href="#">Press</a>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="footer-col">
+            <h4>SUPPORT</h4>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Claims</a>
+            <a href="#">Licensing</a>
+        </div>
+
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="footer-bottom">
+
+        <p>© 2026 SwiftMove. All rights reserved. Licensed & Insured.</p>
+
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Style Guide</a>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>

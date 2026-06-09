@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .navbar{
+            height:65px;
+            background:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:0 40px;
+             position:sticky;
+             top:0;
+            z-index:1000;
+            border-bottom:1px solid #e4e4e4;
+        }
+      .logo{
+    display:flex;
+    align-items:center;
+    gap:1px;
+}
+
+.logo img{
+    width:150px;
+    height:50px;
+    margin-left:20px;
+}
+
+.logo h3{
+    margin-left:  -110px;
+    font-size:32px;
+    font-weight:700; /* not 800px */
+    color:#111827;
+}
+        .nav-links{
+            display:flex;
+            list-style:none;
+            gap:35px;
+            margin:0;
+}
+        .nav-list a{
+            text-decoration:none;
+            color:#4b5563;
+            font-family:sans-serif;
+            font-size: 14px;
+        }
+        .free-quote{
+            background:#ff7b22;
+            color:white;
+            margin-right: 20px;;
+            border:none;
+            padding:10px 20px;
+            border-radius:10px;
+            cursor:pointer;
+        }
+        .moon-icon{
+           margin-right:0;
+        }
+        .nav-right{
+            display:flex;
+            align-items:center;
+            gap:20px;
+        }
+
+        .blog-container{
+    width:90%;
+    margin:80px auto;
+}
+.service-hero{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.service-hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.service-hero p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+.search-box{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.search-box input{
+    width:600px;
+    max-width:90%;
+    padding:10px 20px;
+    border:none;
+    border-radius:40px;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    font-size:15px;
+}
+.categories{
+    text-align:center;
+    margin-bottom:40px;
+}
+.categories button{
+    border:none;
+    background:#e5e7eb;
+    padding:5px 20px;
+    margin:5px;
+    border-radius:30px;
+    font-size:15px;
+}
+.categories .active{
+    background:#2563eb;
+    color:white;
+}
+.blog-grid{
+    display:grid;
+    grid-template-columns:repeat(3,400px);
+    gap:60px;
+}
+.blog-card{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+.blog-card img{
+    width:100%;
+    height:100px;
+    object-fit:fill;
+}
+.blog-content{
+    padding:12px;
+}
+
+.blog-meta{
+    display:flex;
+    gap:30px;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.blog-meta span{
+    background:#dbeafe;
+    color:#2563eb;
+    padding:5px 12px;
+    border-radius:20px;
+}
+
+.blog-meta small{
+    font-size:17px;
+    color:#666;
+}
+
+.blog-content h3{
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+.blue{
+    color:#000000;
+}
+
+.blog-content p{
+    color:#555;
+    font-size:15px;
+    line-height:1.2;
+    margin-bottom:10px;
+}
+.blog-card{
+    overflow: hidden;
+    border-radius: 20px;
+    transition: 0.4s;
+}
+
+.blog-img{
+    overflow: hidden;
+}
+
+.blog-img img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.blog-card:hover .blog-img img{
+    transform: scale(1.1);
+}
+
+.author{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.author img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+}
+
+.author h5{
+    margin:0;
+    font-size:24px;
+}
+
+.author small{
+    color:#666;
+    font-size:18px;
+}
+.newsletter{
+    padding:100px 20px;
+    background:#f8fafc;
+}
+
+.newsletter-box{
+    max-width:750px;
+    margin:auto;
+    background:#081226;
+    padding:60px 50px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.news-badge{
+    display:inline-block;
+    padding:10px 22px;
+    background:#102a63;
+    color:#3b82f6;
+    border-radius:30px;
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:25px;
+}
+
+.newsletter-box h2{
+    color:#fff;
+    font-size:40px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.newsletter-box p{
+    color:#a3b0c4;
+    font-size:20px;
+    line-height:1.5;
+    max-width:700px;
+    margin:0 auto 45px;
+}
+
+.newsletter-form{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.newsletter-form input{
+    width:380px;
+    padding:18px 30px;
+    border:none;
+    border-radius:40px;
+    background:#1d293d;
+    color:#fff;
+    font-size:18px;
+    outline:none;
+}
+
+.newsletter-form input::placeholder{
+    color:#8b97ab;
+}
+
+.newsletter-form button{
+    padding:18px 45px;
+    border:none;
+    border-radius:40px;
+    background:#2563eb;
+    color:#fff;
+    font-size:20px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.newsletter-form button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+@media(max-width:768px){
+
+    .newsletter-box{
+        padding:50px 25px;
+    }
+
+    .newsletter-box h2{
+        font-size:42px;
+    }
+
+    .newsletter-form{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button{
+        width:100%;
+        max-width:400px;
+    }
+}
+.footer{
+    background:#020d28;
+    padding:90px 80px 40px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:80px;
+}
+
+.footer-logo img{
+    width:160px;
+    margin-bottom:10px;
+}
+
+.footer-desc{
+    color:#94a3b8;
+    line-height:1.4;
+    margin-bottom:30px;
+    max-width:350px;
+}
+
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    color:#94a3b8;
+    margin-bottom:10px;
+}
+
+.footer-col h4{
+    color:#fff;
+    margin-bottom:13px;
+    font-size:15px;
+}
+
+.footer-col a{
+    display:block;
+    color:#94a3b8;
+    text-decoration:none;
+    margin-bottom:0.5px;
+}
+
+.footer-col a:hover{
+    color:#fff;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    width:30px;
+    height:30px;
+    border-radius:12px;
+    background:#1e293b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+}
+
+.footer-bottom{
+    margin-top:10px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer-bottom p{
+    color:#94a3b8;
+}
+
+.footer-links{
+    display:flex;
+    gap:30px;
+}
+
+.footer-links a{
+    color:#94a3b8;
+    text-decoration:none;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+.breadcrumb a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+@media(max-width:992px){
+    .blog-grid{
+        grid-template-columns:1fr;
+    }
+}
+.hamburger-icon{
+    display:none;
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        position:relative;
+    }
+
+    .hamburger-icon{
+        display:block;
+        font-size:30px;
+        cursor:pointer;
+        margin-right:20px;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:65px;
+        right:0;
+        width:250px;
+        background:white;
+        flex-direction:column;
+        padding:15px 0;
+        list-style:none;
+        box-shadow:0 5px 15px rgba(0,0,0,.1);
+    }
+
+    .nav-links li{
+        padding:10px 20px;
+    }
+
+    .nav-links li a{
+        text-decoration:none;
+        color:#111827;
+    }
+
+    .hamburger-icon:hover + .nav-links{
+        display:flex;
+    }
+
+    .nav-links:hover{
+        display:flex;
+    }
+
+    .nav-right{
+        display:none;
+    }
+}
+
+@media (min-width:768px) and (max-width:1024px){
+
+    .navbar{
+        padding:0 20px;
+    }
+
+    .logo img{
+        width:120px;
+        height:40px;
+        margin-left:0;
+    }
+
+    .logo h3{
+        font-size:24px;
+        margin-left:-85px;
+    }
+
+    .service-hero h1{
+        font-size:50px;
+    }
+
+    .blog-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+
+    .search-box input{
+        width:90%;
+    }
+
+    .footer{
+        padding:70px 40px 30px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+}
+
+@media (max-width:767px){
+
+    .navbar{
+        padding:0 15px;
+        height:65px;
+    }
+
+    .logo img{
+        width:100px;
+        height:35px;
+        margin-left:0;
+    }
+
+    .logo h3{
+        font-size:20px;
+        margin-left:-70px;
+    }
+
+    .hamburger-icon{
+        display:block;
+        font-size:28px;
+    }
+
+    .nav-links{
+        width:100%;
+        top:65px;
+    }
+
+    .nav-right{
+        display:none;
+    }
+
+    .service-hero{
+        padding:70px 15px;
+    }
+
+    .service-hero h1{
+        font-size:36px;
+    }
+
+    .service-hero p{
+        font-size:15px;
+    }
+
+    .blog-container{
+        width:95%;
+        margin:50px auto;
+    }
+
+    .search-box input{
+        width:100%;
+    }
+
+    .categories{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+    }
+
+    .categories button{
+        font-size:14px;
+        padding:8px 15px;
+    }
+
+    .blog-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .blog-card{
+        width:100%;
+    }
+
+    .blog-img img{
+        height:220px;
+    }
+
+    .blog-meta{
+        flex-wrap:wrap;
+        gap:10px;
+    }
+
+    .blog-content h3{
+        font-size:20px;
+    }
+
+    .author h5{
+        font-size:18px;
+    }
+
+    .author small{
+        font-size:14px;
+    }
+
+    .newsletter{
+        padding:60px 15px;
+    }
+
+    .newsletter-box{
+        padding:40px 20px;
+    }
+
+    .newsletter-box h2{
+        font-size:30px;
+    }
+
+    .newsletter-box p{
+        font-size:16px;
+    }
+
+    .newsletter-form input,
+    .newsletter-form button{
+        width:100%;
+        max-width:none;
+    }
+
+    .footer{
+        padding:60px 20px 30px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+}
+@media (max-width:375px){
+
+    .logo img{
+        width:90px;
+        height:32px;
+    }
+
+    .logo h3{
+        font-size:18px;
+        margin-left:-60px;
+    }
+
+    .service-hero h1{
+        font-size:30px;
+    }
+
+    .blog-meta small{
+        font-size:13px;
+    }
+
+    .blog-content p{
+        font-size:14px;
+    }
+
+    .newsletter-box h2{
+        font-size:26px;
+    }
+
+    .newsletter-box p{
+        font-size:14px;
+    }
+}
+@media (max-width: 768px){
+
+    .newsletter{
+        padding:60px 15px;
+    }
+
+    .newsletter-box{
+        padding:40px 20px;
+    }
+
+    .newsletter-box h2{
+        font-size:32px;
+    }
+
+    .newsletter-box p{
+        font-size:16px;
+    }
+
+    .newsletter-form{
+        display:flex;
+        flex-direction:column;
+        gap:15px;
+        width:100%;
+    }
+
+    .newsletter-form input{
+        width:100%;
+        max-width:100%;
+        box-sizing:border-box;
+    }
+
+    .newsletter-form button{
+        width:100%;
+        max-width:100%;
+        box-sizing:border-box;
+    }
+}
+    </style>
+</head>
+<body>
+<nav class="navbar">
+           <div class="logo">
+                <img src="https://swiftmove-colorlib.pages.dev/assets/img/logo-light.svg" alt="SwiftMove">
+                
+                <h3>swiftmove</h3>
+            </div>
+            <div class="hamburger-icon">
+    ☰
+</div>
+             <ul class="nav-links">
+                <li class="nav-list"><a href="about.html">About</a></li>
+                <li class="nav-list"><a href="services.html">Services</a></li>
+                <li class="nav-list"><a href="index.html#how-it-works">How it Works</a></li>
+                <li class="nav-list"><a href="index.html#areas">Areas</a></li>
+                <li class="nav-list"><a href="pricing.html">Pricing</a></li>
+                <li class="nav-list"><a href="index.html#testimonials">Testimonials</a></li>
+                <li class="nav-list"><a href="index.html#quote">Quote</a></li>
+                <li class="nav-list"><a href="blog.html">Blog</a></li>
+                <li class="nav-list"><a href="contactus.html">contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="moon-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
+                </div>
+                <div class="right">
+                    <button class="free-quote">Free Quote</button>
+                </div>
+            </div>
+        </nav>
+    <section class="service-hero">
+    <h1>Our blog</h1>
+
+    <p>
+        Professional moving services designed to make your relocation
+        smooth, safe, and stress-free.
+    </p>
+     <div class="breadcrumb">
+    <a href="html.html">Home</a> / blog
+</div>
+</section>
+    <section class="blog-container">
+
+    <!-- Search -->
+    <div class="search-box">
+        <input type="text" placeholder="Search articles...">
+    </div>
+
+    <!-- Categories -->
+
+    <div class="categories">
+        <button class="active">All</button>
+        <button>Planning</button>
+        <button>Packing</button>
+        <button>Pet Care</button>
+        <button>Lifestyle</button>
+        <button>Long Distance</button>
+        <button>Organization</button>
+    </div>
+
+    <!-- Blog Cards -->
+
+   <div class="blog-grid">
+
+    <!-- Card 1 -->
+
+    <div class="blog-card">
+
+        <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=600&h=400&fit=crop">
+        </div>
+
+        <div class="blog-content">
+
+            <div class="blog-meta">
+                <span>Planning</span>
+                <small>Feb 15, 2026</small>
+            </div>
+
+            <h3>The Complete Moving Checklist</h3>
+
+            <p>
+                A week-by-week moving checklist to ensure nothing falls through the cracks on moving day.
+            </p>
+
+            <div class="author">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+                <div>
+                    <h5>Mike Thompson</h5>
+                    <small>8 min read</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Card 2 -->
+
+    <div class="blog-card">
+
+        <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop">
+        </div>
+
+        <div class="blog-content">
+
+            <div class="blog-meta">
+                <span>Packing</span>
+                <small>Feb 8, 2026</small>
+            </div>
+
+            <h3 class="blue">
+                How to Pack Fragile Items Safely
+            </h3>
+
+            <p>
+                Expert packing techniques to keep your delicate and valuable items safe during transit.
+            </p>
+
+            <div class="author">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+                <div>
+                    <h5>Mike Thompson</h5>
+                    <small>6 min read</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Card 3 -->
+
+    <div class="blog-card">
+
+        <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop">
+        </div>
+
+        <div class="blog-content">
+
+            <div class="blog-meta">
+                <span>Pet Care</span>
+                <small>Jan 28, 2026</small>
+            </div>
+
+            <h3 class="blue">
+                Moving with Pets: A Survival Guide
+            </h3>
+
+            <p>
+                Essential tips for reducing stress and keeping your pets comfortable during a move.
+            </p>
+
+            <div class="author">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+                <div>
+                    <h5>Mike Thompson</h5>
+                    <small>5 min read</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="blog-card">
+
+        <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&h=400&fit=crop">
+        </div>
+
+        <div class="blog-content">
+
+            <div class="blog-meta">
+                <span>Planning</span>
+                <small>Feb 15, 2026</small>
+            </div>
+
+            <h3>The Complete Moving Checklist</h3>
+
+            <p>
+                A week-by-week moving checklist to ensure nothing falls through the cracks on moving day.
+            </p>
+
+            <div class="author">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+                <div>
+                    <h5>Mike Thompson</h5>
+                    <small>8 min read</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="blog-card">
+
+        <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1455849318743-b2233052fcff?w=600&h=400&fit=crop">
+        </div>
+
+        <div class="blog-content">
+
+            <div class="blog-meta">
+                <span>Planning</span>
+                <small>Feb 15, 2026</small>
+            </div>
+
+            <h3>The Complete Moving Checklist</h3>
+
+            <p>
+                A week-by-week moving checklist to ensure nothing falls through the cracks on moving day.
+            </p>
+
+            <div class="author">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+                <div>
+                    <h5>Mike Thompson</h5>
+                    <small>8 min read</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="blog-card">
+
+        <div class="blog-img">
+            <img src="https://images.unsplash.com/photo-1432821596592-e2c18b78144f?w=600&h=400&fit=crop">
+        </div>
+
+        <div class="blog-content">
+
+            <div class="blog-meta">
+                <span>Planning</span>
+                <small>Feb 15, 2026</small>
+            </div>
+
+            <h3>The Complete Moving Checklist</h3>
+
+            <p>
+                A week-by-week moving checklist to ensure nothing falls through the cracks on moving day.
+            </p>
+
+            <div class="author">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+                <div>
+                    <h5>Mike Thompson</h5>
+                    <small>8 min read</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+<section class="newsletter">
+    <div class="newsletter-box">
+
+        <span class="news-badge">Newsletter</span>
+
+        <h2>Stay in the Loop</h2>
+
+        <p>
+            Subscribe to our newsletter for the latest articles, tips,
+            and updates delivered straight to your inbox.
+        </p>
+
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email">
+            <button type="submit">Subscribe</button>
+        </form>
+
+    </div>
+</section>
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="https://swiftmove-colorlib.pages.dev/assets/img/logo-light.svg" alt="SwiftMove">
+            </div>
+
+            <p class="footer-desc">
+                Professional moving services that make your relocation stress-free.
+                Licensed, insured, and trusted by thousands.
+            </p>
+
+            <div class="contact-info">
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M760-480q0-117-81.5-198.5T480-760v-80q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480h-80Zm-160 0q0-50-35-85t-85-35v-80q83 0 141.5 58.5T680-480h-80Zm198 360q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg> (555) 890-1234</div>
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg> info@swiftmove.com</div>
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></svg> 100 Moving Way, Chicago, IL 60601</div>
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+            <h4>SERVICES</h4>
+            <a href="#">Local Moving</a>
+            <a href="#">Long Distance</a>
+            <a href="#">Commercial Moving</a>
+            <a href="#">Packing Services</a>
+            <a href="#">Storage Solutions</a>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+            <h4>COMPANY</h4>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+            <a href="#">Press</a>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="footer-col">
+            <h4>SUPPORT</h4>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Claims</a>
+            <a href="#">Licensing</a>
+        </div>
+
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="footer-bottom">
+
+        <p>© 2026 SwiftMove. All rights reserved. Licensed & Insured.</p>
+
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Style Guide</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

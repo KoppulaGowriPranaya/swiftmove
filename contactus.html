@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .navbar{
+            height:65px;
+            background:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            padding:0 40px;
+             position:sticky;
+             top:0;
+            z-index:1000;
+            border-bottom:1px solid #e4e4e4;
+        }
+       .logo{
+    display:flex;
+    align-items:center;
+    gap:1px;
+}
+
+.logo img{
+    width:150px;
+    height:50px;
+    margin-left:20px;
+}
+
+.logo h3{
+    margin-left:  -110px;
+    font-size:32px;
+    font-weight:700; /* not 800px */
+    color:#111827;
+}
+        .nav-links{
+            display:flex;
+            list-style:none;
+            gap:35px;
+            margin:0;
+}
+        .nav-list a{
+            text-decoration:none;
+            color:#4b5563;
+            font-family:sans-serif;
+            font-size: 14px;
+        }
+        .free-quote{
+            background:#ff7b22;
+            color:white;
+            margin-right: 20px;;
+            border:none;
+            padding:10px 20px;
+            border-radius:10px;
+            cursor:pointer;
+        }
+        .moon-icon{
+           margin-right:0;
+        }
+        .nav-right{
+            display:flex;
+            align-items:center;
+            gap:20px;
+        }
+
+        .blog-container{
+    width:90%;
+    margin:80px auto;
+}
+.service-hero{
+    background:#2563eb;
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.service-hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.service-hero p{
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+.contact-section{
+    width:90%;
+    margin:90px auto;
+}
+
+.contact-container{
+    display:grid;
+    grid-template-columns:65% 35%;
+    gap:50px;
+}
+
+.contact-form h2,
+.contact-info h2{
+    font-size:22px;
+    font-weight:600;
+    color:#081226;
+    margin-bottom:-20px;
+}
+
+.contact-form p,
+.contact-info p{
+    color:#64748b;
+    font-size:18px;
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+.contact-info{
+    padding-top:15px;
+}
+
+.row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.input-group{
+    margin-bottom:15px;
+}
+
+.input-group label{
+    display:block;
+    font-size:18px;
+    font-weight:500;
+    margin-bottom:10px;
+    color:#081226;
+}
+
+.input-group input,
+.input-group textarea{
+
+    width:100%;
+
+    padding:10px 10px;
+
+    border:1px solid #d7dce3;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+
+    border-color:#2563eb;
+
+}
+
+.estimate-btn{
+
+    margin-top:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 35px;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 10px 20px rgba(37,99,235,.25);
+}
+
+.estimate-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+.info-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+    /* padding-left: 100px; */
+
+    margin-bottom:10px;
+}
+
+.icon{
+
+    width:42px;
+
+    height:42px;
+
+    background:#dbeafe;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:24px;
+
+    color:#2563eb;
+}
+
+.info-box h4{
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:#081226;
+
+    margin-bottom:5px;
+}
+
+.info-box span{
+
+    color:#475569;
+
+    font-size:18px;
+
+    line-height:1.8;
+}
+
+@media(max-width:992px){
+
+.contact-container{
+
+grid-template-columns:1fr;
+
+}
+
+.row{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-form h2,
+.contact-info h2{
+
+font-size:36px;
+
+}
+
+.contact-form p,
+.contact-info p{
+
+font-size:18px;
+
+}
+
+}
+
+@media(max-width:992px){
+
+    .contact-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .row{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+.footer{
+    background:#020d28;
+    padding:90px 80px 40px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:80px;
+}
+
+.footer-logo img{
+    width:160px;
+    margin-bottom:10px;
+}
+
+.footer-desc{
+    color:#94a3b8;
+    line-height:1.4;
+    margin-bottom:30px;
+    max-width:350px;
+}
+
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    color:#94a3b8;
+    margin-bottom:10px;
+}
+
+.footer-col h4{
+    color:#fff;
+    margin-bottom:13px;
+    font-size:15px;
+}
+
+.footer-col a{
+    display:block;
+    color:#94a3b8;
+    text-decoration:none;
+    margin-bottom:0.5px;
+}
+
+.footer-col a:hover{
+    color:#fff;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+}
+
+.social-icons a{
+    width:30px;
+    height:30px;
+    border-radius:12px;
+    background:#1e293b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+}
+
+.footer-bottom{
+    margin-top:10px;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.08);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.footer-bottom p{
+    color:#94a3b8;
+}
+
+.footer-links{
+    display:flex;
+    gap:30px;
+}
+
+.footer-links a{
+    color:#94a3b8;
+    text-decoration:none;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+.breadcrumb a{
+    color:#cbd5e1;
+    text-decoration:none;
+}
+.hamburger-icon{
+    display:none;
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        position:relative;
+    }
+
+    .hamburger-icon{
+        display:block;
+        font-size:30px;
+        cursor:pointer;
+        margin-right:20px;
+    }
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:65px;
+        right:0;
+        width:250px;
+        background:white;
+        flex-direction:column;
+        padding:15px 0;
+        list-style:none;
+        box-shadow:0 5px 15px rgba(0,0,0,.1);
+    }
+
+    .nav-links li{
+        padding:10px 20px;
+    }
+
+    .nav-links li a{
+        text-decoration:none;
+        color:#111827;
+    }
+
+    .hamburger-icon:hover + .nav-links{
+        display:flex;
+    }
+
+    .nav-links:hover{
+        display:flex;
+    }
+
+    .nav-right{
+        display:none;
+    }
+}
+/* =========================
+   TABLET (iPad Mini)
+========================= */
+
+@media (min-width:768px) and (max-width:1024px){
+
+    .navbar{
+        padding:0 20px;
+    }
+
+    .logo img{
+        width:120px;
+        height:40px;
+        margin-left:0;
+    }
+
+    .logo h3{
+        font-size:24px;
+        margin-left:-85px;
+    }
+
+    .contact-container{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .service-hero h1{
+        font-size:50px;
+    }
+
+    .footer{
+        padding:70px 40px 30px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+}
+
+/* =========================
+   MOBILE (iPhone SE)
+========================= */
+
+@media (max-width:767px){
+
+    .navbar{
+        padding:0 15px;
+        height:65px;
+    }
+
+    .logo{
+        gap:5px;
+    }
+
+    .logo img{
+        width:100px;
+        height:35px;
+        margin-left:0;
+    }
+
+    .logo h3{
+        font-size:20px;
+        margin-left:-70px;
+    }
+
+    .hamburger-icon{
+        display:block;
+        font-size:28px;
+        cursor:pointer;
+    }
+
+    .nav-links{
+        width:100%;
+        top:65px;
+    }
+
+    .nav-right{
+        display:none;
+    }
+
+    .service-hero{
+        padding:70px 15px;
+    }
+
+    .service-hero h1{
+        font-size:36px;
+    }
+
+    .service-hero p{
+        font-size:15px;
+        line-height:1.6;
+    }
+
+    .contact-section{
+        width:92%;
+        margin:60px auto;
+    }
+
+    .contact-container{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .row{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    .contact-form h2,
+    .contact-info h2{
+        font-size:28px;
+    }
+
+    .contact-form p,
+    .contact-info p{
+        font-size:16px;
+    }
+
+    .input-group label{
+        font-size:16px;
+    }
+
+    .estimate-btn{
+        width:100%;
+        padding:15px;
+    }
+
+    .info-box{
+        gap:15px;
+        align-items:flex-start;
+    }
+
+    .icon{
+        width:38px;
+        height:38px;
+        font-size:20px;
+        flex-shrink:0;
+    }
+
+    .info-box span{
+        font-size:15px;
+        line-height:1.6;
+    }
+
+    .footer{
+        padding:60px 20px 30px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .footer-logo img{
+        width:140px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+        gap:15px;
+    }
+
+    .footer-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
+}
+
+@media (max-width:375px){
+
+    .logo img{
+        width:90px;
+        height:32px;
+    }
+
+    .logo h3{
+        font-size:18px;
+        margin-left:-60px;
+    }
+
+    .service-hero h1{
+        font-size:30px;
+    }
+
+    .contact-form h2,
+    .contact-info h2{
+        font-size:24px;
+    }
+
+    .estimate-btn{
+        font-size:16px;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+            <div class="logo">
+                <img src="https://swiftmove-colorlib.pages.dev/assets/img/logo-light.svg" alt="SwiftMove">
+                
+                <h3>swiftmove</h3>
+            </div>
+            <div class="hamburger-icon">
+    ☰
+</div>
+             <ul class="nav-links">
+                <li class="nav-list"><a href="about.html">About</a></li>
+                <li class="nav-list"><a href="services.html">Services</a></li>
+                <li class="nav-list"><a href="index.html#how-it-works">How it Works</a></li>
+                <li class="nav-list"><a href="index.html#areas">Areas</a></li>
+                <li class="nav-list"><a href="pricing.html">Pricing</a></li>
+                <li class="nav-list"><a href="index.html#testimonials">Testimonials</a></li>
+                <li class="nav-list"><a href="index.html#quote">Quote</a></li>
+                <li class="nav-list"><a href="blog.html">Blog</a></li>
+                <li class="nav-list"><a href="contactus.html">contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="moon-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
+                </div>
+                <div class="right">
+                    <button class="free-quote">Free Quote</button>
+                </div>
+            </div>
+        </nav>
+    <section class="service-hero">
+    <h1>contact us</h1>
+
+    <p>
+        Professional moving services designed to make your relocation
+        smooth, safe, and stress-free.
+    </p>
+
+     <div class="breadcrumb">
+    <a href="html.html">Home</a> / contact
+</div>
+</section>
+<section class="contact-section">
+
+<div class="contact-container">
+
+<div class="contact-form">
+
+<h2>Get a Free Estimate</h2>
+
+<p>
+Tell us about your move and we'll provide a detailed quote within 24 hours.
+</p>
+
+<form>
+
+<div class="row">
+
+<div class="input-group">
+<label>Full Name</label>
+<input type="text" placeholder="John Doe">
+</div>
+
+<div class="input-group">
+<label>Email</label>
+<input type="email" placeholder="john@example.com">
+</div>
+
+</div>
+
+<div class="input-group">
+<label>Subject</label>
+<input type="text"
+placeholder="Local move, long-distance, packing services...">
+</div>
+
+<div class="input-group">
+<label>Message</label>
+<textarea rows="7"
+placeholder="Tell us your moving date, origin, destination, and home size..."></textarea>
+</div>
+<button type="submit" class="estimate-btn">
+Request Estimate →
+</button>
+</form>
+</div>
+<div class="contact-info">
+<h2>Moving Inquiries</h2>
+<p>Our moving coordinators are standing by.</p>
+<div class="info-box">
+<div class="icon">
+✉
+</div>
+<div>
+<h4>Email</h4>
+<span>info@swiftmove.com</span>
+</div>
+</div>
+<div class="info-box">
+<div class="icon">
+☎
+</div>
+<div>
+<h4>Phone</h4>
+<span>(555) 890-1234</span>
+</div>
+
+</div>
+
+<div class="info-box">
+
+<div class="icon">
+📍
+</div>
+
+<div>
+<h4>Address</h4>
+<span>100 Moving Way, Chicago, IL 60601</span>
+</div>
+
+</div>
+
+<div class="info-box">
+
+<div class="icon">
+🕒
+</div>
+
+<div>
+
+<h4>Business Hours</h4>
+
+<span>Mon - Fri: 7:00 AM - 7:00 PM</span>
+
+<br>
+
+<span>Sat: 8:00 AM - 4:00 PM</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <!-- Column 1 -->
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="https://swiftmove-colorlib.pages.dev/assets/img/logo-light.svg" alt="SwiftMove">
+            </div>
+
+            <p class="footer-desc">
+                Professional moving services that make your relocation stress-free.
+                Licensed, insured, and trusted by thousands.
+            </p>
+
+            <div class="contact-info">
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M760-480q0-117-81.5-198.5T480-760v-80q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480h-80Zm-160 0q0-50-35-85t-85-35v-80q83 0 141.5 58.5T680-480h-80Zm198 360q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12ZM241-600l66-66-17-94h-89q5 41 14 81t26 79Zm358 358q39 17 79.5 27t81.5 13v-88l-94-19-67 67ZM241-600Zm358 358Z"/></svg> (555) 890-1234</div>
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg> info@swiftmove.com</div>
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#666666"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></svg> 100 Moving Way, Chicago, IL 60601</div>
+            </div>
+
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+            <h4>SERVICES</h4>
+            <a href="#">Local Moving</a>
+            <a href="#">Long Distance</a>
+            <a href="#">Commercial Moving</a>
+            <a href="#">Packing Services</a>
+            <a href="#">Storage Solutions</a>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+            <h4>COMPANY</h4>
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Blog</a>
+            <a href="#">Press</a>
+        </div>
+
+        <!-- Column 4 -->
+        <div class="footer-col">
+            <h4>SUPPORT</h4>
+            <a href="#">FAQ</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Claims</a>
+            <a href="#">Licensing</a>
+        </div>
+
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="footer-bottom">
+
+        <p>© 2026 SwiftMove. All rights reserved. Licensed & Insured.</p>
+
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Style Guide</a>
+        </div>
+    </div>
+</footer>
+    
+</body>
+</html>
